@@ -19,9 +19,9 @@ public class DefenceSpawnPreview : MonoBehaviour
     Ray ray;
     bool mouseInPlayableArea = false;
 
-    void Start()
+    private void OnEnable()
     {
-        
+        renderer.enabled = false;
     }
 
     void Update()
@@ -29,15 +29,9 @@ public class DefenceSpawnPreview : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100.0f, layerMask))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                transform.position = Vector3.Lerp(transform.position, hit.point, smooth);
-                mouseInPlayableArea = true;
-            }
-            else
-            {
-                mouseInPlayableArea = hit.collider.tag == "PlayableArea";
-            }           
+            transform.position = Vector3.Lerp(transform.position, hit.point, smooth);
+            mouseInPlayableArea = true;
+            renderer.enabled = true;
         }
 
         if (mouseInPlayableArea && enemiesTooClose.Count == 0 && defencesTooClose.Count == 0)

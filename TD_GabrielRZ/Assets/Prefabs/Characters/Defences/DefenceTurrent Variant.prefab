@@ -64,6 +64,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224060852283771274, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_Shape
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224060852283771274, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_Extents.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224060852283771274, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_Extents.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224060852283771274, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_Extents.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2670795769328414423, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_Name
       value: DefenceTurrent
@@ -82,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6418514552815211703, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 8.26
       objectReference: {fileID: 0}
     - target: {fileID: 6418514552815211703, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_LocalRotation.w
