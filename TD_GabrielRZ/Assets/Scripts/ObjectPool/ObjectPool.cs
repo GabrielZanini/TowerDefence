@@ -18,6 +18,7 @@ public class ObjectPool : MonoBehaviour
         InstantiateInitialObjects();
     }
 
+
     [Button]
     private void InstantiateInitialObjects()
     {
@@ -77,6 +78,7 @@ public class ObjectPool : MonoBehaviour
         poolObject.OnDespawn.Invoke();
     }
 
+
     [Button]
     private void ClearLists()
     {
@@ -111,14 +113,11 @@ public class ObjectPool : MonoBehaviour
             // Instantiate new Object and add to Inactive list.
             var newObject = Instantiate(prefab, transform);
             PoolObject poolObject = newObject.GetComponent<PoolObject>();
-            poolObject.pool = this;
+            poolObject.SetPool(this);
             newObject.SetActive(false);
             inactiveObjects.Add(poolObject);
         }
     }
-
-
-
 }
 
 public abstract class PoolObject : MonoBehaviour
@@ -126,4 +125,9 @@ public abstract class PoolObject : MonoBehaviour
     protected ObjectPool pool;
     public Action OnDespawn;
     public Action OnSpawn;
+
+    public void SetPool(ObjectPool objectPool)
+    {
+        pool = objectPool;
+    }
 }
