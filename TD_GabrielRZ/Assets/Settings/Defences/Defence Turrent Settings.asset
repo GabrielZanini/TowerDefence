@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5652e69309e0a4980e2df632b769c1, type: 3}
   m_Name: Defence Turrent Settings
   m_EditorClassIdentifier: 
-  type: 1
-  name: Defence
-  originalModel: {fileID: 0}
+  type: 0
+  name: Turret
+  originalModel: {fileID: 4687983796541455634, guid: c2c0e50d060ebc740bdeaed82be89ce9, type: 3}
   levels:
   - cost: 0
-    hp: 0
-    speed: 0
-    damage: 0
-  - cost: 0
-    hp: 0
-    speed: 0
-    damage: 0
-  - cost: 0
-    hp: 0
-    speed: 0
-    damage: 0
+    hp: 100
+    speed: 0.5
+    damage: 10
+  - cost: 200
+    hp: 150
+    speed: 0.4
+    damage: 15
+  - cost: 500
+    hp: 200
+    speed: 0.4
+    damage: 20
