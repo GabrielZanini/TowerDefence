@@ -4,19 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenceManager : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
-
-    public Action<DefenceManager> OnDeath;
+    public Action<CharacterManager> OnDeath;
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     [Button]
@@ -24,5 +23,10 @@ public class DefenceManager : MonoBehaviour
     {
         OnDeath.Invoke(this);
         Destroy(gameObject);
+    }
+
+    public void TakeDamage()
+    {
+
     }
 }

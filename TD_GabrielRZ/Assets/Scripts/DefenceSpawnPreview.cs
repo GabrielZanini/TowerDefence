@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceDefence : MonoBehaviour
+public class DefenceSpawnPreview : MonoBehaviour
 {
     [SerializeField] private Material materialGood; 
     [SerializeField] private Material materialBad; 
@@ -12,8 +12,8 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private float smooth = 0.5f;
 
 
-    [SerializeField] private List<EnemyManager> enemiesTooClose = new List<EnemyManager>();
-    [SerializeField] private List<DefenceManager> defencesTooClose = new List<DefenceManager>();
+    [SerializeField] private List<CharacterManager> enemiesTooClose = new List<CharacterManager>();
+    [SerializeField] private List<CharacterManager> defencesTooClose = new List<CharacterManager>();
 
     RaycastHit hit;
     Ray ray;
@@ -67,21 +67,21 @@ public class PlaceDefence : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            RemoveEnemy(other.gameObject.GetComponent<EnemyManager>());
+            RemoveEnemy(other.gameObject.GetComponent<CharacterManager>());
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Defence"))
         {
-            RemoveDefence(other.gameObject.GetComponent<DefenceManager>());
+            RemoveDefence(other.gameObject.GetComponent<CharacterManager>());
         }
     }
 
-    private void AddEnemy(EnemyManager enemy)
+    private void AddEnemy(CharacterManager enemy)
     {
         enemy.OnDeath += RemoveEnemy;
         enemiesTooClose.Add(enemy);
     }
 
-    private void RemoveEnemy(EnemyManager enemy)
+    private void RemoveEnemy(CharacterManager enemy)
     {        
         if (enemiesTooClose.Contains(enemy))
         {
@@ -90,13 +90,13 @@ public class PlaceDefence : MonoBehaviour
         }
     }
 
-    private void AddDefence(DefenceManager defence)
+    private void AddDefence(CharacterManager defence)
     {
         defence.OnDeath += RemoveDefence;
         defencesTooClose.Add(defence);
     }
 
-    private void RemoveDefence(DefenceManager defence)
+    private void RemoveDefence(CharacterManager defence)
     {
         if (defencesTooClose.Contains(defence))
         {

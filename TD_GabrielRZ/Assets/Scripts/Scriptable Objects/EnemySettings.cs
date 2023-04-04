@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySettings : MonoBehaviour
+[CreateAssetMenu(fileName = "Enemy Settings", menuName = "ScriptableObjects", order = 1)]
+public class EnemySettings : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string name ;
+    public float hp = 100;
+    public float speed = 3f;
+    public float eliteBonus = 2f;
+    public float eliteChance = 0.01f;
 }

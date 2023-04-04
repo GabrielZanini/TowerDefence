@@ -19,7 +19,7 @@ public enum EnemyRank
     Elite
 }
 
-public enum TypeOfDefence
+public enum DefenceType
 {
     Turret,
     Wall,
@@ -29,10 +29,4 @@ public enum TypeOfDefence
     MiniTower,
 }
 
-public enum TypeOfObjective
-{
-    GoTo,
-    Destroy,
-    Avoid
-}
 

@@ -4,10 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : CharacterManager
 {
-
-    public Action<EnemyManager> OnDeath;
 
     void Start()
     {
@@ -17,13 +15,6 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    [Button]
-    void Die()
-    {
-        OnDeath.Invoke(this);
-        Destroy(gameObject);
     }
 
 }
