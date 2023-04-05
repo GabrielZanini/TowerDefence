@@ -21,14 +21,17 @@ public abstract class CharacterManager : PoolObject
 
     protected virtual void Awake()
     {
-        OnSpawn += Spawned;
-        OnDespawn += Despawned;
+        OnSpawn.AddListener(Spawned);
+        OnDespawn.AddListener(Despawned);
+        OnDeath += Death;
+
     }
 
     protected virtual private void OnDestroy()
     {
-        OnSpawn -= Spawned;
-        OnDespawn -= Despawned;
+        OnSpawn.RemoveListener(Spawned);
+        OnDespawn.RemoveListener(Despawned);
+        OnDeath -= Death;
     }
 
     protected virtual void Spawned()
@@ -41,7 +44,11 @@ public abstract class CharacterManager : PoolObject
 
     }
 
-    [Button]
+    protected virtual void Death(CharacterManager characterManager)
+    {
+
+    }
+
     protected virtual void Die()
     {
         OnDeath.Invoke(this);

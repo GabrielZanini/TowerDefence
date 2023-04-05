@@ -17,13 +17,16 @@ public class ObjectPoolsManager : MonoBehaviour
     [ShowNativeProperty]
     public int EnemyPoolsCount => enemyPools.Count;
 
-    private void Start()
+    private void Awake()
     {
         if (charactersData == null)
         {
             charactersData = GameManager.Instance.CharactersData;
         }
+    }
 
+    private void Start()
+    {
         CreateObjectPools();
     }
 

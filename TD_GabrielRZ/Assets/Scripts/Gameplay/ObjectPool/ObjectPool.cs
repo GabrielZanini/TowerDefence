@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectPool : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ObjectPool : MonoBehaviour
     [ReadOnly] [SerializeField] private List<PoolObject> activeObjects = new List<PoolObject>();
     [ReadOnly] [SerializeField] private List<PoolObject> inactiveObjects = new List<PoolObject>();
 
+    public int ActiveObjectsCount { get { return activeObjects.Count; } }
+    public int InactiveObjectsCount { get { return inactiveObjects.Count; } }
 
     void Start()
     {
@@ -83,6 +86,15 @@ public class ObjectPool : MonoBehaviour
         poolObject.OnDespawn.Invoke();
     }
 
+    public void DespawnAll()
+    {
+        while (activeObjects.Count > 0f)
+        {
+            Despawn(activeObjects[0]);
+        }
+    }
+
+
 
     [Button]
     private void ClearLists()
@@ -129,8 +141,8 @@ public class ObjectPool : MonoBehaviour
 public abstract class PoolObject : MonoBehaviour
 {
     protected ObjectPool pool;
-    public Action OnDespawn;
-    public Action OnSpawn;
+    public UnityEvent OnDespawn;
+    public UnityEvent OnSpawn;
 
     public void SetPool(ObjectPool objectPool)
     {

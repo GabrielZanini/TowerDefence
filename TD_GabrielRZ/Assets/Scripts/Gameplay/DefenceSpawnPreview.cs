@@ -114,8 +114,11 @@ public class DefenceSpawnPreview : MonoBehaviour
 
     private void AddEnemy(CharacterManager enemy)
     {
-        enemy.OnDeath += RemoveEnemy;
-        enemiesTooClose.Add(enemy);
+        if (enemy != null)
+        {
+            enemy.OnDeath += RemoveEnemy;
+            enemiesTooClose.Add(enemy);
+        }
     }
 
     private void RemoveEnemy(CharacterManager enemy)
@@ -129,8 +132,11 @@ public class DefenceSpawnPreview : MonoBehaviour
 
     private void AddDefence(CharacterManager defence)
     {
-        defence.OnDeath += RemoveDefence;
-        defencesTooClose.Add(defence);
+        if (defence != null)
+        {
+            defence.OnDeath += RemoveDefence;
+            defencesTooClose.Add(defence);
+        }        
     }
 
     private void RemoveDefence(CharacterManager defence)

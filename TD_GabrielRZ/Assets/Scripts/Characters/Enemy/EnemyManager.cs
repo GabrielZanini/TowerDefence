@@ -21,17 +21,23 @@ public class EnemyManager : CharacterManager
 
     private EnemySettings settings;
     private PlayerData playerData;
+    private PlayerManager playerManager;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         settings = GameManager.Instance.CharactersData.GetEnemySettings(Type);
+        playerData = GameManager.Instance.GameplayManager.PlayerData;
+        playerManager = GameManager.Instance.GameplayManager.PlayerManager;
     }
 
     protected override void Die()
     {
-        base.Die();
+        playerData.AddScore(PointsWorth);
+        playerManager.AddMoney(MoneyDrop);
 
+        base.Die();
     }
 
     protected override void Spawned()
@@ -42,7 +48,6 @@ public class EnemyManager : CharacterManager
 
     private void SetStatus()
     {
-
         IsElite = UnityEngine.Random.Range(0f, 1f) < settings.eliteChance;
 
         if (IsElite)
@@ -65,5 +70,7 @@ public class EnemyManager : CharacterManager
             PointsWorth = settings.pointsWorth;
             transform.localScale = Vector3.one;
         }
+
+
     }
 }

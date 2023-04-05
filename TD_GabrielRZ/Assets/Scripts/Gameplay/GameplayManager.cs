@@ -13,11 +13,12 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     public PlayerData PlayerData { get { return playerData; } }
 
-    [SerializeField] private EnemySpawner enemySpawner;
-    public EnemySpawner EnemySpawner { get { return enemySpawner; } }
+    [SerializeField] private PlayerManager playerManager;
+    public PlayerManager PlayerManager { get { return playerManager; } }
+
+
 
     [SerializeField] private DefenceSpawnPreview spawnPreview;
-    [SerializeField] private PlayerManager playerManager;
 
 
     private DefenceSettings previewSettings = null;
@@ -55,8 +56,11 @@ public class GameplayManager : MonoBehaviour
     private void OnPreviewConfirm(Vector3 position)
     {
         gameplayState = GameplayState.Playing;
-        poolsManager.GetPool(previewSettings.type).Spawn(position, Quaternion.Euler(0,90,0));
-        playerData.AddMoney(-previewSettings.levels[0].price);
+        if (playerManager.Money > previewSettings.levels[0].price)
+        {
+            poolsManager.GetPool(previewSettings.type).Spawn(position, Quaternion.Euler(0, 90, 0));
+            playerManager.AddMoney(-previewSettings.levels[0].price);
+        }        
     }
 
     private void OnPreviewCancel()

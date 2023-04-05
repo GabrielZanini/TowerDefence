@@ -14,13 +14,12 @@ public class EnemyAI : MonoBehaviour
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        target = GameManager.Instance.GameplayManager.EnemyTarget;
+
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            navMeshAgent.destination = target.position;
-        }
+        navMeshAgent.destination = target.position;
     }
 }

@@ -17,15 +17,19 @@ MonoBehaviour:
   waves:
   - prize: 100
     subwaves:
-    - spawnRate: {x: 0, y: 0}
+    - spawnRate: {x: 0.92233944, y: 1.9223394}
       enemies:
       - quantity: 10
         type: 0
   - prize: 200
     subwaves:
-    - spawnRate: {x: 0.2, y: 1}
-      enemies: []
+    - spawnRate: {x: 0.4, y: 0.8}
+      enemies:
+      - quantity: 10
+        type: 0
   - prize: 300
     subwaves:
-    - spawnRate: {x: 0, y: 0}
-      enemies: []
+    - spawnRate: {x: 0.1, y: 0.2}
+      enemies:
+      - quantity: 10
+        type: 0

@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224060852283771274, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_Extents.x
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224060852283771274, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_Extents.z
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2670795769328414423, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_Name
-      value: DefenceBase
+      value: Wall Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2973350422383368818, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: type

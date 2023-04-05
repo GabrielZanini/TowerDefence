@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player Settings
   m_EditorClassIdentifier: 
   hp: 100
-  initialMoney: 200
+  initialMoney: 200000

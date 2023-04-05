@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Wall
   originalModel: {fileID: 1027220441632736956, guid: f1585a321905cad458dd20a8b8070e19, type: 3}
   prefab: {fileID: 6919639528667956108, guid: 05e3b2a07d051f44e936a92e0accc58d, type: 3}
-  triggerSize: 10
+  triggerSize: 15
   levels:
   - price: 50
     hp: 100

@@ -53,7 +53,10 @@ public class DefenceGun : MonoBehaviour
 
     private void ReleaseTarget(CharacterManager characterManager)
     {
-        characterManager.OnDeath -= ReleaseTarget;
+        if (characterManager != null)
+        {
+            characterManager.OnDeath -= ReleaseTarget;
+        } 
 
         enemyTarget = null;
     }
@@ -83,7 +86,10 @@ public class DefenceGun : MonoBehaviour
             }
             else
             {
-                enemyTarget.TakeDamage(defenceManager.Attack);
+                if (enemyTarget != null)
+                {
+                    enemyTarget.TakeDamage(defenceManager.Attack);
+                }
             }
 
             cooldown = defenceManager.Speed;
@@ -96,8 +102,11 @@ public class DefenceGun : MonoBehaviour
 
     private void AddEnemy(CharacterManager enemy)
     {
-        enemy.OnDeath += RemoveEnemy;
-        enemiesInRange.Add(enemy);
+        if (enemy != null)
+        {
+            enemy.OnDeath += RemoveEnemy;
+            enemiesInRange.Add(enemy);
+        }
     }
 
     private void RemoveEnemy(CharacterManager enemy)

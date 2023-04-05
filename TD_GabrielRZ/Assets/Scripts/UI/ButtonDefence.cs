@@ -22,7 +22,7 @@ public class ButtonDefence : MonoBehaviour
 
     private void Update()
     {
-        button.interactable = gameplayManager.PlayerData.Money > priceValue;
+        button.interactable = gameplayManager.PlayerManager.Money > priceValue;
     }
 
     public void SetupButton(DefenceSettings settings)

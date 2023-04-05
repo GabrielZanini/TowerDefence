@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Turret
   originalModel: {fileID: 4687983796541455634, guid: c2c0e50d060ebc740bdeaed82be89ce9, type: 3}
   prefab: {fileID: 6842755706575591449, guid: 95fd43ec3f7c49347bb5a18daa133b04, type: 3}
+  triggerSize: 25
   levels:
   - price: 100
     hp: 100

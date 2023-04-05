@@ -17,8 +17,9 @@ public class DefenceManager : CharacterManager
     private DefenceSettings settings;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         settings = GameManager.Instance.CharactersData.GetDefenceSettings(Type);
         rangeTrigger.transform.localScale = Vector3.one * settings.triggerSize;
     }

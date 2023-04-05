@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private PlayerSettings settings;
 
-    public Action OnDeath;
+    public UnityEvent OnDeath;
 
     
     private void Awake()
@@ -26,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            var enemy = other.gameObject.GetComponent<EnemyManager>();
+            var enemy = other.gameObject.GetComponentInParent<EnemyManager>();
             if (enemy != null)
             {
                 TakeDamage(enemy.Attack);
@@ -38,6 +39,7 @@ public class PlayerManager : MonoBehaviour
 
     private void SetupPlayer()
     {
+        Debug.Log("PlayerManager :: SetupPlayer");
         HP = settings.hp;
         Money = settings.initialMoney;
     }
@@ -60,7 +62,7 @@ public class PlayerManager : MonoBehaviour
 
     private void TakeDamage(int damage)
     {
-        HP -= damage;
+        HP = HP - damage;
 
         if (HP <= 0)
         {

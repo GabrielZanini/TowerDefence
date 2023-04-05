@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemySettings : ScriptableObject
 {
     public EnemyType type = EnemyType.Soldier;
-    public string name = "Enemy";
+    public new string name = "Enemy";
     public GameObject originalModel;
     public GameObject prefab;
 
