@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e8042ec6ddddf47aa9e64a35f0bfae, type: 3}
-  m_Name: Enemy Soldier Settings
+  m_Script: {fileID: 11500000, guid: 36e26cdbaaad39646b34da13dfe32679, type: 3}
+  m_Name: Player Settings
   m_EditorClassIdentifier: 
-  name: Soldier
-  originalModel: {fileID: 3390416685483389873, guid: a8a5c69b3adb29a46a9c1d1a47c4c7b0, type: 3}
   hp: 100
-  speed: 3
-  eliteBonus: 2
-  eliteChance: 0.01
+  initialMoney: 200

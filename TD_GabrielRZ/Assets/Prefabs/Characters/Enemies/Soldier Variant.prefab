@@ -11,9 +11,13 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2088217378, guid: 43802a641a5823a4f8022b44e841a91f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3208954954398043623, guid: 43802a641a5823a4f8022b44e841a91f, type: 3}
       propertyPath: m_Name
-      value: EnemySoldier
+      value: Soldier Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8238400971927407389, guid: 43802a641a5823a4f8022b44e841a91f, type: 3}
       propertyPath: m_RootOrder

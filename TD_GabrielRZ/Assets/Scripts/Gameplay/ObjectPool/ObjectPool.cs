@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    [SerializeField] public GameObject prefab;
+    [SerializeField] private GameObject prefab;
     [SerializeField] [Range(0, 1000)] private int initialInactivesObjects = 10;
     [SerializeField] [Range(0, 1000)] private int maxObjects = 100;
-    [SerializeField] private List<PoolObject> activeObjects = new List<PoolObject>();
-    [SerializeField] private List<PoolObject> inactiveObjects = new List<PoolObject>();
+    [ReadOnly] [SerializeField] private List<PoolObject> activeObjects = new List<PoolObject>();
+    [ReadOnly] [SerializeField] private List<PoolObject> inactiveObjects = new List<PoolObject>();
 
 
     void Start()
@@ -18,6 +18,10 @@ public class ObjectPool : MonoBehaviour
         InstantiateInitialObjects();
     }
 
+    public void SetPrefab(GameObject objPrefab)
+    {
+        prefab = objPrefab;
+    }
 
     [Button]
     private void InstantiateInitialObjects()
@@ -32,12 +36,13 @@ public class ObjectPool : MonoBehaviour
     }
 
     [Button]
-    public void Spawn()
+    private void Spawn()
     {
         Spawn(transform.position, transform.rotation);
     }
 
-    private void Spawn(Vector3 position, Quaternion rotation, bool active = true)
+
+    public void Spawn(Vector3 position, Quaternion rotation)
     {
         PoolObject poolObject;
 
@@ -108,6 +113,7 @@ public class ObjectPool : MonoBehaviour
 
     private void InstantiateObject()
     {
+        // Check if the object limit has been reached
         if (activeObjects.Count + inactiveObjects.Count < maxObjects)
         {
             // Instantiate new Object and add to Inactive list.

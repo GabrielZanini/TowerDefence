@@ -7,7 +7,6 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private EnemyType type = EnemyType.Soldier;
-    [SerializeField] private EnemyRank rank = EnemyRank.Normal;
 
 
     private NavMeshAgent navMeshAgent;

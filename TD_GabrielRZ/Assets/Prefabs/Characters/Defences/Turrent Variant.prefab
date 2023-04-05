@@ -57,6 +57,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c0e50d060ebc740bdeaed82be89ce9, type: 3}
+--- !u!4 &345270318897635465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5400177759966095395, guid: c2c0e50d060ebc740bdeaed82be89ce9, type: 3}
+  m_PrefabInstance: {fileID: 5637359432407926954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7490005679465884664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3011277516815442770, guid: c2c0e50d060ebc740bdeaed82be89ce9, type: 3}
+  m_PrefabInstance: {fileID: 5637359432407926954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8928043855955670734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670795769328414423, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_Name
-      value: DefenceTurrent
+      value: Turrent Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6418514552815211703, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_RootOrder
@@ -130,8 +140,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+--- !u!1 &6842755706575591449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670795769328414423, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+  m_PrefabInstance: {fileID: 8928043855955670734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5955375956577463484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2973350422383368818, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+  m_PrefabInstance: {fileID: 8928043855955670734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842755706575591449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632589f327f26a343873377d99b8068b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3734580516076708412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5203115130526651634, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
   m_PrefabInstance: {fileID: 8928043855955670734}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &352549617373127705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842755706575591449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debb379435ed0bf40b78d39ae9c3ab5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenceManager: {fileID: 5955375956577463484}
+  gun: {fileID: 345270318897635465}
+  muzzle: {fileID: 7490005679465884664}
+  followEnemy: 1
+  areaDamage: 0

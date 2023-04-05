@@ -13,11 +13,6 @@ public enum EnemyType
     Healer,
 }
 
-public enum EnemyRank
-{
-    Normal,
-    Elite
-}
 
 public enum DefenceType
 {
@@ -29,4 +24,20 @@ public enum DefenceType
     MiniTower,
 }
 
+public enum GameplayState
+{
+    MainMenu,
+    Playing,
+    Pause,
+    PlacingDefence,
+    GameOver,
+    ChangingWave
+}
 
+
+public enum UIState
+{
+    MainMenu,
+    PauseMenu,
+    Gameplay
+}

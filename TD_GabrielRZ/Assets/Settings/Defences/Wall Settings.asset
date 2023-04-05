@@ -10,21 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf5652e69309e0a4980e2df632b769c1, type: 3}
-  m_Name: Defence Turrent Settings
+  m_Name: Wall Settings
   m_EditorClassIdentifier: 
-  type: 0
-  name: Turret
-  originalModel: {fileID: 4687983796541455634, guid: c2c0e50d060ebc740bdeaed82be89ce9, type: 3}
+  type: 1
+  name: Wall
+  originalModel: {fileID: 1027220441632736956, guid: f1585a321905cad458dd20a8b8070e19, type: 3}
+  prefab: {fileID: 6919639528667956108, guid: 05e3b2a07d051f44e936a92e0accc58d, type: 3}
+  triggerSize: 10
   levels:
-  - cost: 0
+  - price: 50
     hp: 100
-    speed: 0.5
-    damage: 10
-  - cost: 200
-    hp: 150
-    speed: 0.4
-    damage: 15
-  - cost: 500
-    hp: 200
-    speed: 0.4
-    damage: 20
+    speed: 0
+    attack: 0
