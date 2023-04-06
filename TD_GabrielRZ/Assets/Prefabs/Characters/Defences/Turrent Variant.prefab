@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrent Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3306987687138003130, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6418514552815211703, guid: 251a4a52bdb193943886714492f2bae3, type: 3}
       propertyPath: m_RootOrder
       value: 0

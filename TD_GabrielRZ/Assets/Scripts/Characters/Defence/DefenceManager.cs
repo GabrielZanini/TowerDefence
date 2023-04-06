@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenceManager : CharacterManager
 {
@@ -14,6 +15,7 @@ public class DefenceManager : CharacterManager
 
 
     [SerializeField] private GameObject rangeTrigger;
+    [SerializeField] private Button UpgradeButton;
     private DefenceSettings settings;
 
 
@@ -54,4 +56,30 @@ public class DefenceManager : CharacterManager
         }
     }
 
+
+
+  
+    //private void OnMouseEnter()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+            
+    //    }
+
+    //    UpgradeButton.gameObject.SetActive(true);
+    //}
+
+
+    //private void OnMouseExit()
+    //{
+    //    StartCoroutine(ShowUpgradeUI(2f));
+    //}
+
+    //IEnumerator ShowUpgradeUI(float duration)
+    //{
+
+    //    yield return new WaitForSeconds(duration);
+
+    //    UpgradeButton.gameObject.SetActive(false);
+    //}
 }

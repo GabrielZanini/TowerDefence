@@ -3,11 +3,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyManager : CharacterManager
 {
+    [SerializeField] private NavMeshAgent navMeshAgent;
+
+    [ReadOnly]
+    [SerializeField]
+    private EnemyType type;
+
     [ShowNativeProperty]
-    public EnemyType Type { get; private set; }
+    public EnemyType Type => type;
 
     [ShowNativeProperty]
     public bool IsElite { get; protected set; }
@@ -49,6 +56,7 @@ public class EnemyManager : CharacterManager
     private void SetStatus()
     {
         IsElite = UnityEngine.Random.Range(0f, 1f) < settings.eliteChance;
+        type = settings.type;
 
         if (IsElite)
         {
@@ -71,6 +79,6 @@ public class EnemyManager : CharacterManager
             transform.localScale = Vector3.one;
         }
 
-
+        navMeshAgent.speed = Speed;
     }
 }

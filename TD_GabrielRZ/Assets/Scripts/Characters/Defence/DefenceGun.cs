@@ -69,7 +69,7 @@ public class DefenceGun : MonoBehaviour
         }
         else
         {
-            gun.rotation = Quaternion.identity;
+            gun.localRotation = Quaternion.identity;
         }
     }
 

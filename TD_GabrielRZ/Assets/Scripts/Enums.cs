@@ -33,11 +33,3 @@ public enum GameplayState
     GameOver,
     ChangingWave
 }
-
-
-public enum UIState
-{
-    MainMenu,
-    PauseMenu,
-    Gameplay
-}

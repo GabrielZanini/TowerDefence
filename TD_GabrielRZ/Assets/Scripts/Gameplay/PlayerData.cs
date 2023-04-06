@@ -1,16 +1,32 @@
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] private new string name = "";
-    public string Name { get { return name; } }
+    [SerializeField] string playerName = "PLAYER NAME PLAYER NAME";
 
-    [SerializeField] private int score;
+    [ShowNativeProperty]
+    public string PlayerName { get { return playerName; } }
+
+    [SerializeField] private int score = 0;
     public int Score { get { return score; } }
 
+
+    [SerializeField] private List<ScoreLog> scoreHistory = new List<ScoreLog>();
+
+
+    private void Awake()
+    {
+        LoadScoreFile();
+    }
+
+    private void OnDestroy()
+    {
+        SaveScoreFile();
+    }
 
     public void AddScore(int points)
     {
@@ -19,5 +35,47 @@ public class PlayerData : MonoBehaviour
         {
             score = 0;
         }
+    }
+
+    public void SetPlayerName(string newName)
+    {
+        playerName = newName;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
+    public void SaveScoreLog()
+    {
+        scoreHistory.Add(new ScoreLog(PlayerName, Score));
+    }
+
+    private void SaveScoreFile()
+    {
+
+    }
+
+    private void LoadScoreFile()
+    {
+
+    }
+
+}
+
+
+
+
+[Serializable]
+public class ScoreLog
+{
+    public string playerName;
+    public int score;
+
+    public ScoreLog(string playerName, int score)
+    {
+        this.playerName = playerName;
+        this.score = score;
     }
 }

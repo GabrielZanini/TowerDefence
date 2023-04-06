@@ -15,12 +15,12 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private PlayerSettings settings;
 
-    public UnityEvent OnDeath;
+    [HideInInspector] public UnityEvent OnDeath;
 
     
     private void Awake()
     {
-        SetupPlayer();
+        //SetupPlayer();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,14 +37,13 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    private void SetupPlayer()
+    public void SetupPlayer()
     {
-        Debug.Log("PlayerManager :: SetupPlayer");
         HP = settings.hp;
         Money = settings.initialMoney;
     }
 
-    public void healHp()
+    public void HealHp()
     {
         HP = settings.hp;
     }
@@ -67,7 +66,6 @@ public class PlayerManager : MonoBehaviour
         if (HP <= 0)
         {
             OnDeath.Invoke();
-            SetupPlayer();
         }
     }
 }
